@@ -6,8 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>restexample</name>
 	<description>Holds a sample rest project which runs with jetty server and REST easy client.</description>
-
-
+	
 	<properties>
 		<resteasy.version>3.6.3.Final</resteasy.version>
 		<junit.version>4.11</junit.version>
@@ -15,10 +14,7 @@
 		<jetty.version>9.4.15.v20190215</jetty.version>
 		<maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
 	</properties>
-
-
 	<dependencies>
-
 		<!-- RESTEasy runtime dependencies -->
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
@@ -45,13 +41,10 @@
 			<artifactId>jetty-servlet</artifactId>
 			<version>${jetty.version}</version>
 		</dependency>
-
 	</dependencies>
-
 
 	<build>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -79,8 +72,10 @@
 						</goals>
 						<configuration>
 							<transformers>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>
 										org.pepcode.example.restexample.ServerMain
 									</mainClass>
@@ -90,7 +85,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 
